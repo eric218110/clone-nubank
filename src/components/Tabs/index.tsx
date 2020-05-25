@@ -12,6 +12,13 @@ export const Tabs: React.FC<ITabsProps> = ({ translateY }) => {
   return (
     <Container
       style={{
+        transform: [{
+          translateY: translateY.interpolate({
+            inputRange: [0, 380],
+            outputRange: [0, 30],
+            extrapolate: 'clamp',
+          })
+        }],
         opacity: translateY.interpolate({
           inputRange: [0, 280],
           outputRange: [1, 0.3],
